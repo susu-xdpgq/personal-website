@@ -36,16 +36,16 @@
   <div aria-hidden="true" class="pointer-events-none fixed inset-0 -z-10 opacity-[0.06] grid-bg"></div>
   <header class="fixed top-0 inset-x-0 z-50">
     <div class="mx-auto max-w-7xl px-4 md:px-6">
-      <div class="mt-4 rounded-2xl bg-white/5 backdrop-blur supports-[backdrop-filter]:bg-white/5 ring-1 ring-white/10">
+      <div class="mt-4 rounded-2xl bg-white/5 backdrop-blur supports-[backdrop-filter]:bg-white/5 ring-1 ring-white/10 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]">
         <div class="flex items-center justify-between px-4 py-3 md:px-6">
-          <a href="#hero" class="text-white font-semibold tracking-wide">苏苏</a>
+          <a href="#hero" class="text-white font-semibold tracking-wide">苏苏 · AI‑Native</a>
           <button id="nav-toggle" class="md:hidden inline-flex items-center justify-center rounded-md p-2 text-gray-200 hover:bg-white/10 focus:outline-none" aria-expanded="false" aria-controls="nav-menu">
             <span class="sr-only">菜单</span>
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/></svg>
           </button>
           <nav id="nav-menu" class="hidden md:flex items-center gap-6">
             <a href="#about" class="text-gray-200 hover:text-white transition">关于我</a>
-            <a href="#interests" class="text-gray-200 hover:text-white transition">生活美学</a>
+            <a href="#life" class="text-gray-200 hover:text-white transition">生活美学</a>
             <a href="#ai-works" class="text-gray-200 hover:text-white transition">AI作品</a>
             <a href="#future" class="text-gray-200 hover:text-white transition">未来展望</a>
             <a href="#footer" class="ml-2 inline-flex items-center rounded-full bg-white/10 px-4 py-2 text-sm text-white hover:bg-white/20 transition">和我聊聊</a>
@@ -54,7 +54,7 @@
         <div id="nav-panel" class="md:hidden hidden px-4 pb-4">
           <div class="flex flex-col gap-3">
             <a href="#about" class="text-gray-200 hover:text-white transition">关于我</a>
-            <a href="#interests" class="text-gray-200 hover:text-white transition">生活美学</a>
+            <a href="#life" class="text-gray-200 hover:text-white transition">生活美学</a>
             <a href="#ai-works" class="text-gray-200 hover:text-white transition">AI作品</a>
             <a href="#future" class="text-gray-200 hover:text-white transition">未来展望</a>
             <a href="#footer" class="inline-flex items-center rounded-full bg-white/10 px-4 py-2 text-sm text-white hover:bg-white/20 transition w-max">和我聊聊</a>
@@ -64,8 +64,12 @@
     </div>
   </header>
   <main class="min-h-screen">
-    <!-- 首屏：自我介绍 -->
-    <section id="hero" data-reveal class="container mx-auto max-w-7xl px-6 md:px-8 pt-36 pb-16 md:pt-44 md:pb-24 scroll-mt-24">
+    <section id="hero" data-reveal class="relative container mx-auto max-w-7xl px-6 md:px-8 pt-36 pb-16 md:pt-44 md:pb-24 scroll-mt-24">
+      <div class="absolute inset-0 -z-10 pointer-events-none">
+        <div class="absolute -top-16 -left-20 w-80 h-80 rounded-full blur-3xl opacity-70" style="background: radial-gradient(40% 40% at 50% 50%, rgba(59,130,246,0.45), rgba(0,0,0,0) 70%);"></div>
+        <div class="absolute -bottom-10 -right-16 w-72 h-72 rounded-full blur-3xl opacity-40" style="background: radial-gradient(40% 40% at 50% 50%, rgba(99,102,241,0.35), rgba(0,0,0,0) 70%);"></div>
+        <div id="hero-spotlight" class="absolute inset-0 mix-blend-screen opacity-90 pointer-events-none" style="background: radial-gradient(520px circle at 60% 40%, rgba(59,130,246,0.25), transparent 60%);"></div>
+      </div>
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-12 items-center">
         <div class="space-y-6">
           <div class="text-2xl md:text-3xl font-medium text-gray-200">
@@ -80,12 +84,11 @@
           </p>
         </div>
         <div class="relative flex justify-center lg:justify-end">
-          <div aria-hidden="true" class="pointer-events-none absolute -top-10 -left-8 w-72 h-72 rounded-full blur-3xl opacity-60" style="background: radial-gradient(48% 48% at 50% 50%, rgba(59,130,246,0.45) 0%, rgba(0,0,0,0) 70%);"></div>
-          <img
-            src="assets/me.jpg"
-            alt="苏苏"
-            class="w-full max-w-md rounded-2xl shadow-2xl object-cover aspect-[4/5] transition duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_25px_60px_-15px_rgba(0,0,0,0.6)] hover:scale-[1.02]"
-          />
+          <div class="absolute -inset-6 rounded-[28px] opacity-30 blur-xl pointer-events-none" style="background: conic-gradient(from 180deg at 50% 50%, rgba(59,130,246,0.0), rgba(59,130,246,0.35), rgba(99,102,241,0.3), rgba(59,130,246,0.0));"></div>
+          <div class="relative rounded-2xl overflow-hidden ring-1 ring-white/10 shadow-2xl">
+            <img src="assets/me.jpg" alt="苏苏" class="w-full max-w-md object-cover aspect-[4/5] rounded-2xl transition duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_25px_60px_-15px_rgba(0,0,0,0.6)] hover:scale-[1.02]" />
+            <div aria-hidden="true" class="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-inset ring-white/10"></div>
+          </div>
         </div>
       </div>
     </section>
@@ -93,13 +96,16 @@
     <section id="about" data-reveal class="container mx-auto max-w-7xl px-6 md:px-8 py-10 md:py-12 scroll-mt-24">
       <h2 class="sr-only">关于我</h2>
     </section>
-    <section id="interests" data-reveal class="container mx-auto max-w-7xl px-6 md:px-8 py-16 md:py-20 scroll-mt-24">
-      <h2 class="text-2xl md:text-3xl font-bold text-white mb-8">生活美学 (Interests)</h2>
+    <section id="life" data-reveal class="container mx-auto max-w-7xl px-6 md:px-8 py-16 md:py-20 scroll-mt-24">
+      <div class="flex items-end justify-between mb-6 md:mb-8">
+        <h2 class="text-2xl md:text-3xl font-bold text-white">生活美学 (Interests)</h2>
+        <p class="hidden md:block text-sm text-gray-400">以身体、自然与声音为轴，寻找秩序与温度</p>
+      </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-        <article class="bg-neutral-900/60 rounded-2xl overflow-hidden ring-1 ring-white/5">
-          <div class="overflow-hidden">
-            <img src="assets/fitness.jpg" alt="健身" class="w-full h-48 md:h-56 object-cover transition duration-300 ease-out hover:scale-105" />
-          </div>
+        <article class="group relative rounded-2xl overflow-hidden ring-1 ring-white/5 bg-neutral-900/60 transition will-change-transform duration-300 ease-out hover:-translate-y-1 hover:ring-white/10">
+          <img src="assets/fitness.jpg" alt="健身" class="w-full h-48 md:h-56 object-cover transition duration-300 ease-out group-hover:scale-105" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-60 pointer-events-none"></div>
+          <div class="absolute top-3 left-3 inline-flex items-center rounded-full bg-white/10 px-3 py-1 text-xs text-white/90 ring-1 ring-white/15 backdrop-blur">自律 · Fitness</div>
           <div class="p-6">
             <h3 class="text-xl font-semibold text-white mb-2">自律</h3>
             <p class="text-gray-300 leading-relaxed">
@@ -107,10 +113,10 @@
             </p>
           </div>
         </article>
-        <article class="bg-neutral-900/60 rounded-2xl overflow-hidden ring-1 ring-white/5">
-          <div class="overflow-hidden">
-            <img src="assets/hiking.jpg" alt="徒步" class="w-full h-48 md:h-56 object-cover transition duration-300 ease-out hover:scale-105" />
-          </div>
+        <article class="group relative rounded-2xl overflow-hidden ring-1 ring-white/5 bg-neutral-900/60 transition will-change-transform duration-300 ease-out hover:-translate-y-1 hover:ring-white/10">
+          <img src="assets/hiking.jpg" alt="徒步" class="w-full h-48 md:h-56 object-cover transition duration-300 ease-out group-hover:scale-105" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-60 pointer-events-none"></div>
+          <div class="absolute top-3 left-3 inline-flex items-center rounded-full bg-white/10 px-3 py-1 text-xs text-white/90 ring-1 ring-white/15 backdrop-blur">探索 · Hiking</div>
           <div class="p-6">
             <h3 class="text-xl font-semibold text-white mb-2">探索</h3>
             <p class="text-gray-300 leading-relaxed">
@@ -118,10 +124,10 @@
             </p>
           </div>
         </article>
-        <article class="bg-neutral-900/60 rounded-2xl overflow-hidden ring-1 ring-white/5">
-          <div class="overflow-hidden">
-            <img src="assets/live.jpg" alt="Live 音乐" class="w-full h-48 md:h-56 object-cover transition duration-300 ease-out hover:scale-105" />
-          </div>
+        <article class="group relative rounded-2xl overflow-hidden ring-1 ring-white/5 bg-neutral-900/60 transition will-change-transform duration-300 ease-out hover:-translate-y-1 hover:ring-white/10">
+          <img src="assets/live.jpg" alt="Live 音乐" class="w-full h-48 md:h-56 object-cover transition duration-300 ease-out group-hover:scale-105" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent opacity-60 pointer-events-none"></div>
+          <div class="absolute top-3 left-3 inline-flex items-center rounded-full bg-white/10 px-3 py-1 text-xs text-white/90 ring-1 ring-white/15 backdrop-blur">共振 · Live</div>
           <div class="p-6">
             <h3 class="text-xl font-semibold text-white mb-2">共振</h3>
             <p class="text-gray-300 leading-relaxed">
@@ -224,6 +230,20 @@
           }, 1500);
         } catch (e) {}
       });
+    }
+    const hero = document.getElementById("hero");
+    const spotlight = document.getElementById("hero-spotlight");
+    if (hero && spotlight) {
+      const update = (x, y) => {
+        spotlight.style.background = `radial-gradient(520px circle at ${x}% ${y}%, rgba(59,130,246,0.25), transparent 60%)`;
+      };
+      hero.addEventListener("pointermove", (e) => {
+        const r = hero.getBoundingClientRect();
+        const x = ((e.clientX - r.left) / r.width) * 100;
+        const y = ((e.clientY - r.top) / r.height) * 100;
+        update(x.toFixed(2), y.toFixed(2));
+      });
+      hero.addEventListener("pointerleave", () => update(60, 40));
     }
   </script>
 </body>
