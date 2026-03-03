@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>苏苏 · AI-Native 个人门户</title>
+  <script>
+    window.tailwind = {};
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="color-scheme" content="dark light" />
+  <style>
+    @keyframes wave {
+      0% { transform: rotate(0deg); }
+      15% { transform: rotate(18deg); }
+      30% { transform: rotate(-12deg); }
+      45% { transform: rotate(10deg); }
+      60% { transform: rotate(-6deg); }
+      75% { transform: rotate(3deg); }
+      100% { transform: rotate(0deg); }
+    }
+    @keyframes fade-in-up {
+      0% { opacity: 0; transform: translateY(16px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    html { scroll-behavior: smooth; }
+    .grid-bg {
+      background-image:
+        linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+  </style>
+</head>
+<body class="bg-[#050505] text-gray-100 antialiased selection:bg-neutral-700/60">
+  <div aria-hidden="true" class="pointer-events-none fixed inset-0 -z-10 opacity-[0.06] grid-bg"></div>
+  <header class="fixed top-0 inset-x-0 z-50">
+    <div class="mx-auto max-w-7xl px-4 md:px-6">
+      <div class="mt-4 rounded-2xl bg-white/5 backdrop-blur supports-[backdrop-filter]:bg-white/5 ring-1 ring-white/10">
+        <div class="flex items-center justify-between px-4 py-3 md:px-6">
+          <a href="#hero" class="text-white font-semibold tracking-wide">苏苏</a>
+          <button id="nav-toggle" class="md:hidden inline-flex items-center justify-center rounded-md p-2 text-gray-200 hover:bg-white/10 focus:outline-none" aria-expanded="false" aria-controls="nav-menu">
+            <span class="sr-only">菜单</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/></svg>
+          </button>
+          <nav id="nav-menu" class="hidden md:flex items-center gap-6">
+            <a href="#about" class="text-gray-200 hover:text-white transition">关于我</a>
+            <a href="#interests" class="text-gray-200 hover:text-white transition">生活美学</a>
+            <a href="#ai-works" class="text-gray-200 hover:text-white transition">AI作品</a>
+            <a href="#future" class="text-gray-200 hover:text-white transition">未来展望</a>
+            <a href="#footer" class="ml-2 inline-flex items-center rounded-full bg-white/10 px-4 py-2 text-sm text-white hover:bg-white/20 transition">和我聊聊</a>
+          </nav>
+        </div>
+        <div id="nav-panel" class="md:hidden hidden px-4 pb-4">
+          <div class="flex flex-col gap-3">
+            <a href="#about" class="text-gray-200 hover:text-white transition">关于我</a>
+            <a href="#interests" class="text-gray-200 hover:text-white transition">生活美学</a>
+            <a href="#ai-works" class="text-gray-200 hover:text-white transition">AI作品</a>
+            <a href="#future" class="text-gray-200 hover:text-white transition">未来展望</a>
+            <a href="#footer" class="inline-flex items-center rounded-full bg-white/10 px-4 py-2 text-sm text-white hover:bg-white/20 transition w-max">和我聊聊</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main class="min-h-screen">
+    <!-- 首屏：自我介绍 -->
+    <section id="hero" data-reveal class="container mx-auto max-w-7xl px-6 md:px-8 pt-36 pb-16 md:pt-44 md:pb-24 scroll-mt-24">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-12 items-center">
+        <div class="space-y-6">
+          <div class="text-2xl md:text-3xl font-medium text-gray-200">
+            <span class="inline-block origin-[70%_70%] animate-[wave_1.6s_ease-in-out_infinite] select-none">👋</span>
+            你好，我是 <span class="font-semibold text-white">苏苏</span>
+          </div>
+          <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight text-white">
+            AI 探索者 & 终身学习者
+          </h1>
+          <p class="text-base md:text-lg leading-relaxed text-gray-300">
+            正在进化的 AI 探索者。从 0 到 1，我正在学习如何利用 LLM (Large Language Models, 大语言模型) 与代码连接创意与现实。
+          </p>
+        </div>
+        <div class="relative flex justify-center lg:justify-end">
+          <div aria-hidden="true" class="pointer-events-none absolute -top-10 -left-8 w-72 h-72 rounded-full blur-3xl opacity-60" style="background: radial-gradient(48% 48% at 50% 50%, rgba(59,130,246,0.45) 0%, rgba(0,0,0,0) 70%);"></div>
+          <img
+            src="assets/me.jpg"
+            alt="苏苏"
+            class="w-full max-w-md rounded-2xl shadow-2xl object-cover aspect-[4/5] transition duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_25px_60px_-15px_rgba(0,0,0,0.6)] hover:scale-[1.02]"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section id="about" data-reveal class="container mx-auto max-w-7xl px-6 md:px-8 py-10 md:py-12 scroll-mt-24">
+      <h2 class="sr-only">关于我</h2>
+    </section>
+    <section id="interests" data-reveal class="container mx-auto max-w-7xl px-6 md:px-8 py-16 md:py-20 scroll-mt-24">
+      <h2 class="text-2xl md:text-3xl font-bold text-white mb-8">生活美学 (Interests)</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <article class="bg-neutral-900/60 rounded-2xl overflow-hidden ring-1 ring-white/5">
+          <div class="overflow-hidden">
+            <img src="assets/fitness.jpg" alt="健身" class="w-full h-48 md:h-56 object-cover transition duration-300 ease-out hover:scale-105" />
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-white mb-2">自律</h3>
+            <p class="text-gray-300 leading-relaxed">
+              汗水是身体最诚实的奖赏。在每一次推举中对抗平庸，感受自律带来的纯粹掌控感。
+            </p>
+          </div>
+        </article>
+        <article class="bg-neutral-900/60 rounded-2xl overflow-hidden ring-1 ring-white/5">
+          <div class="overflow-hidden">
+            <img src="assets/hiking.jpg" alt="徒步" class="w-full h-48 md:h-56 object-cover transition duration-300 ease-out hover:scale-105" />
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-white mb-2">探索</h3>
+            <p class="text-gray-300 leading-relaxed">
+              步履不停，在群山间找回内心。切断信号，与自然深度对话，在每一步中重新发现自我。
+            </p>
+          </div>
+        </article>
+        <article class="bg-neutral-900/60 rounded-2xl overflow-hidden ring-1 ring-white/5">
+          <div class="overflow-hidden">
+            <img src="assets/live.jpg" alt="Live 音乐" class="w-full h-48 md:h-56 object-cover transition duration-300 ease-out hover:scale-105" />
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-white mb-2">共振</h3>
+            <p class="text-gray-300 leading-relaxed">
+              每一个音符的震动，都是对热烈生命最直白的表白。在人群的共振中，找回久违的纯粹。
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="ai-works" data-reveal class="container mx-auto max-w-7xl px-6 md:px-8 py-16 md:py-20 scroll-mt-24">
+      <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">AI 作品集：灵感广场 (AI Works)</h2>
+      <p class="text-gray-300 mb-8">
+        用 Prompt (提示词) 捕捉灵感的瞬间。在 Algorithms (算法) 与艺术的交界处，见证奇迹。
+      </p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <div class="group relative overflow-hidden rounded-2xl ring-1 ring-white/5">
+          <img src="assets/ai-1.jpg" alt="AI 作品 1" class="w-full h-60 md:h-72 object-cover transition duration-300 ease-out group-hover:scale-105" />
+          <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-300 ease-out flex items-end">
+            <div class="p-4 w-full text-sm leading-relaxed text-gray-100">Prompt：赛博朋克 城市夜景、霓虹、长曝光；LLM 辅助调参；Algorithms 与艺术交汇；Build 流程可复现。</div>
+          </div>
+        </div>
+        <div class="group relative overflow-hidden rounded-2xl ring-1 ring-white/5">
+          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=80" alt="AI 作品 2 占位图" class="w-full h-60 md:h-72 object-cover transition duration-300 ease-out group-hover:scale-105" />
+          <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-300 ease-out flex items-end">
+            <div class="p-4 w-full text-sm leading-relaxed text-gray-100">Prompt：抽象 几何与光影、GAN 生成；Prompt 工程；Algorithms 优化；端到端 Build。</div>
+          </div>
+        </div>
+        <div class="group relative overflow-hidden rounded-2xl ring-1 ring-white/5">
+          <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1400&q=80" alt="AI 作品 3 占位图" class="w-full h-60 md:h-72 object-cover transition duration-300 ease-out group-hover:scale-105" />
+          <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-300 ease-out flex items-end">
+            <div class="p-4 w-full text-sm leading-relaxed text-gray-100">Prompt：未来 科技 装置艺术、体积光、风格迁移；LLM 驱动创意；可迭代 Build。</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 未来展望：深度文案 -->
+    <section id="future" data-reveal class="container mx-auto max-w-4xl px-6 md:px-8 py-16 md:py-24 scroll-mt-24">
+      <div class="text-center">
+        <h2 class="text-2xl md:text-3xl font-bold tracking-[0.25em] text-white mb-6">未来展望 (Future)</h2>
+        <p class="text-xl md:text-2xl text-gray-200 leading-loose">
+          “从 0 到 1 的跨越，不仅是代码的堆砌，更是对未知的勇敢致敬。作为一名 AI-Native (人工智能原生) 的创造者，我正在学习如何用技术赋予创意灵魂。我眼中的未来，不是冰冷的 Algorithms (算法)，而是人机共生下的美学实验。在这条探索人机边界的路上，我将保持好奇，持续 Build (构建)，让每一行代码都带有生命的温度。”
+        </p>
+      </div>
+    </section>
+  </main>
+  <footer id="footer" data-reveal class="container mx-auto max-w-7xl px-6 md:px-8 py-10 md:py-12 scroll-mt-24">
+    <div class="border-t border-white/10 pt-6">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <div class="text-gray-200">
+          <button id="contact-copy" class="inline-flex items-center gap-2 text-white/90 hover:text-white transition">
+            <span>🌏：Fr_Xunxun</span>
+          </button>
+        </div>
+        <div class="text-xs text-gray-400">© 2026 苏苏 | Built with AI</div>
+      </div>
+    </div>
+  </footer>
+  <div id="toast" class="fixed bottom-6 inset-x-0 flex justify-center opacity-0 transition duration-300 pointer-events-none">
+    <div class="rounded-full bg-white/10 text-white text-sm px-4 py-2 backdrop-blur ring-1 ring-white/15">已复制</div>
+  </div>
+
+  <script>
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate-[fade-in-up_0.8s_ease-out_0.1s_both]");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+    document.querySelectorAll("[data-reveal]").forEach((el) => observer.observe(el));
+    const navToggle = document.getElementById("nav-toggle");
+    const navPanel = document.getElementById("nav-panel");
+    if (navToggle && navPanel) {
+      navToggle.addEventListener("click", () => {
+        const open = navPanel.classList.toggle("hidden") === false;
+        navToggle.setAttribute("aria-expanded", String(open));
+      });
+      navPanel.querySelectorAll("a").forEach(a => a.addEventListener("click", () => {
+        navPanel.classList.add("hidden");
+        navToggle.setAttribute("aria-expanded", "false");
+      }));
+    }
+    const contactBtn = document.getElementById("contact-copy");
+    const toast = document.getElementById("toast");
+    if (contactBtn && toast) {
+      contactBtn.addEventListener("click", async () => {
+        try {
+          await navigator.clipboard.writeText("Fr_Xunxun");
+          toast.classList.remove("opacity-0");
+          toast.classList.add("opacity-100");
+          setTimeout(() => {
+            toast.classList.remove("opacity-100");
+            toast.classList.add("opacity-0");
+          }, 1500);
+        } catch (e) {}
+      });
+    }
+  </script>
+</body>
+</html>
+
